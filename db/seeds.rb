@@ -1,7 +1,9 @@
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
+require "open-uri"
+
+
 # Example:
 #
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
@@ -80,7 +82,9 @@ unit1 = Unit.create!(
   title: "Surfboard 75Z",
   shop: shop1
 )
-
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964664/surfboard_standing_in_the_sand_1_xhungh.jpg")
+unit1.photo.attach(io: file, filename: "surfboard.png", content_type: "image/png")
+unit1.save
 
 unit2 = Unit.create!(
   price: 100,
@@ -89,6 +93,11 @@ unit2 = Unit.create!(
   title: "Surfboard Hamilton",
   shop: shop1
 )
+
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964664/surfboard_standing_in_the_sand_nlfhu6.jpg")
+unit2.photo.attach(io: file, filename: "surfboard.png", content_type: "image/png")
+unit2.save
+
 unit3 = Unit.create!(
   price: 100,
   description: "The original Surfboard of Brody",
@@ -97,6 +106,9 @@ unit3 = Unit.create!(
   shop: shop1
 )
 
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964664/surfboard_standing_in_the_sand_2_v7ro2y.jpg")
+unit3.photo.attach(io: file, filename: "surfboard.png", content_type: "image/png")
+unit3.save
 
 unit4 = Unit.create!(
   price: 100,
@@ -170,6 +182,11 @@ unit12 = Unit.create!(
   title: "Tent Bear Grylls",
   shop: shop4
 )
+
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964664/surfboard_standing_in_the_sand_1_xhungh.jpg")
+article = Article.new(title: "NES", body: "A surfboard stading in the sand")
+article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+article.save
 
 
 booking1 = Booking.create!(

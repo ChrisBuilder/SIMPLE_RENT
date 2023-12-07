@@ -10,7 +10,9 @@
 
 <h3>Here are all your Units</h3>
 
-
-<% @units.each do |unit| %>
+<div>
+  <% @units.each do |unit| %>
   <%= unit.description %>
+  <%= cl_image_tag unit.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+</div>
