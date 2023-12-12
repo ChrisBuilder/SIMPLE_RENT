@@ -3,7 +3,7 @@
     <p class = "welcome">Welcome <%= @user.first_name %>,</p><br><p class = "card-text">have a quick look at your activities!</p>
   </div>
 
-  <div class = "row">
+  <div class = "row justify-content-center">
     <div class = "column">
       <div class = "card">
         <h3><%= Date.today.strftime("%A, %B %e, %Y") %></h3>
@@ -46,23 +46,23 @@
       <div class = "card-main">
         <h3 class = "text-center">Your upcoming rental</h3>
         <hr>
-          <% if @next_booking %>
+          <!--<% if @next_booking %> -->
+          <% @bookings.each do |booking| %>
+            <% if booking.start_date.future? %>
              <h3 class="innertxt">
-
-                <div>
-                  <h3 class = "d-inline">Booking Number:</h3> <p class = "card-text d-inline"><%= @next_booking.id %></p>
-                </div>
-                <div>
-                  <h3 class = "d-inline">Renting:</h3> <p class = "card-text d-inline"><%= @next_booking.unit.title %></p>
-                </div>
-                <div>
-                  <h3 class = "d-inline">Start:</h3> <p class = "card-text d-inline"><%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></p>
-                </div>
-                <div>
-                  <h3 class = "d-inline">End:</h3> <p class = "card-text d-inline"><%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></p>
-                </div>
-          <% else %>
-              <p>You have no upcoming bookings</p>
+              <div>
+                <h3 class = "d-inline">Booking Number:</h3> <p class = "card-text d-inline"><%= @next_booking.id %></p>
+              </div>
+              <div>
+                <h3 class = "d-inline">Renting:</h3> <p class = "card-text d-inline"><%= @next_booking.unit.title %></p>
+              </div>
+              <div>
+                <h3 class = "d-inline">Start:</h3> <p class = "card-text d-inline"><%= @next_booking.start_date.strftime("%A, %B %e, %Y") %></p>
+              </div>
+              <div>
+                <h3 class = "d-inline">End:</h3> <p class = "card-text d-inline"><%= @next_booking.end_date.strftime("%A, %B %e, %Y") %></p>
+              </div>
+            <% end %>
           <% end %>
           </div>
       </div>
@@ -73,20 +73,23 @@
         <h3 class = "text-center">Past Bookings</h3>
         <hr>
         <% @bookings.each do |booking| %>
-          <div>
-            <h3 class = "d-inline">Rented:</h3><p class = "card-text d-inline"><%= booking.unit.title %></p>
-          </div>
-          <div>
-            <h3 class = "d-inline">Start:</h3><p class = "card-text d-inline"><%= booking.start_date.strftime("%A, %B %e, %Y") %></p>
-          </div>
-          <div>
-            <h3 class = "d-inline">End:</h3> <p class = "card-text d-inline"><%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
-          </div>
-          <div>
-            <h3 class = "d-inline">Amount spent:</h3> <p class = "card-text d-inline">$<%= booking.unit.price  %></p>
-          </div>
-          <hr>
+          <% if booking.end_date.past? %>
+            <div>
+              <h3 class = "d-inline">Rented:</h3><p class = "card-text d-inline"><%= booking.unit.title %></p>
+            </div>
+            <div>
+              <h3 class = "d-inline">Start:</h3><p class = "card-text d-inline"><%= booking.start_date.strftime("%A, %B %e, %Y") %></p>
+            </div>
+            <div>
+              <h3 class = "d-inline">End:</h3> <p class = "card-text d-inline"><%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
+            </div>
+            <div>
+              <h3 class = "d-inline">Amount spent:</h3> <p class = "card-text d-inline">$<%= booking.unit.price  %></p>
+            </div>
+            <hr>
+          <% end %>
         <% end %>
+      <% end %>
       </div>
     </div>
 
