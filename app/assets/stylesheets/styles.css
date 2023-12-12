@@ -84,3 +84,30 @@
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
+
+  .review-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .review-form h2 {
+    font-family: 'Rammetto One', cursive;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .review-form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .review-form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }

@@ -9,11 +9,20 @@
     <h2><%= @unit.title %></h2>
     <p>Description: <%= @unit.description %></p>
     <div id="shopcard">
-    <%= link_to "Back", shop_units_path()%>
-    <%= link_to @shop.title, shop_units_path() %>
-    <%= link_to "Book now", new_shop_unit_booking_path(@unit.shop, unit) %>
+      <%= link_to "Back to Shop", shop_units_path(@unit.shop) %>
+      <%= link_to @shop.title, shop_units_path(@unit.shop) %>
+      <%= link_to "Book now", new_shop_unit_booking_path(@unit.shop, @unit) %>
     </div>
   </div>
 </div>
 
-<%= link_to "Back", units_path %>
+<div class="review-form">
+  <h2>Add Review</h2>
+  <%= form_for [@unit, Review.new] do |f| %>
+    <%= f.text_area :content, placeholder: 'Write your review...' %>
+    <%= f.number_field :rating, placeholder: 'Rating (1-5)' %>
+    <%= f.submit 'Submit Review' %>
+  <% end %>
+</div>
+
+<%= link_to "Back to Units", units_path %>
