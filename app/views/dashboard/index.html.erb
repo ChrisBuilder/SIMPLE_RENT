@@ -35,13 +35,19 @@
 
     <div class = "column">
       <div class = "card">
-        <h3>Your Shops</h3>
-        <hr>
-        <% shop_count = @user.shops.count %>
-        <% if shop_count > 1 %>
-          <p class = "card-text d-inline">You have <%= shop_count %> shops on our platform!</p>
-        <% else %>
-          <p class = "card-text">You have no shops here yet!</p>
+        <%= link_to shops_path, class: "text-decoration-none" do %>
+          <h3>Your Shops</h3>
+          <hr>
+          <% if @user.shops.any? %>
+            <% shop_count = @user.shops.count %>
+            <% if shop_count > 0 %>
+              <p class = "card-text <%= shop_count > 1 ? 'd-inline': '' %>">
+                <%= "You have #{shop_count} #{'shop'.pluralize(shop_count)} on our platform!" %>
+              </p>
+            <% else %>
+              <p class = "card-text">You have no shops here yet!</p>
+            <% end %>
+          <% end %>
         <% end %>
       </div>
     </div>
