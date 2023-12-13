@@ -17,29 +17,27 @@
 
 
 
-<div class = "row">
-    <% @units.each do |unit| %>
-      <div class = "column">
-        <div class = "card">
-           <%= link_to  shop_unit_path(unit.shop, unit), class: "text-decoration-none" do %>
-           <!-- Just making sure I see the units. It can be removed later-->
-           <% if unit.photo.attached? %>
-              <%= cl_image_tag(unit.photo.key, class: "card-img") %>
-            <% end %>
-            <div class="card-text-content">
-              <h6><%= unit.title %></h6>
-              <p><%= unit.description.truncate(50) %></p>
-              <p class = "mb-3">$<%= unit.price %></p>
-            <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now", data: { turbo_frame: "remote_modal" } %>
+  <div class = "row">
+      <% @units.each do |unit| %>
+        <div class = "column">
+          <div class = "card">
+            <%= link_to  shop_unit_path(unit.shop, unit), class: "text-decoration-none" do %>
+            <!-- Just making sure I see the units. It can be removed later-->
+            <% if unit.photo.attached? %>
+                <%= cl_image_tag(unit.photo.key, class: "card-img") %>
+              <% end %>
+              <div class="card-text-content">
+                <h6><%= unit.title %></h6>
+                <p><%= unit.description.truncate(50) %></p>
+                <p class = "mb-3">$<%= unit.price %></p>
+              <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now", data: { turbo_frame: "remote_modal" } %>
 
-            </div>
-          <%end%>
+              </div>
+            <%end%>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 
-
-  <%= link_to "View Your Dashboard", dashboard_path, class: "btn-flat btn-dashboard"%>
 </div>
