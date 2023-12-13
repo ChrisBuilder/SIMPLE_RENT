@@ -1,6 +1,5 @@
-<div  class = "container">
-
-  <h1 class = "header-text">Units to choose from</h1>
+<div class="container">
+  <h1 class="header-text">Units to choose from</h1>
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
       <%= form_with url: units_path, method: :get, class: "d-flex" do %>
@@ -15,26 +14,22 @@
   </div>
 
 
-
-
-  <div class = "row">
-      <% @units.each do |unit| %>
-        <div class = "column">
-          <div class = "card">
-            <%= link_to  shop_unit_path(unit.shop, unit), class: "text-decoration-none" do %>
+  <div class="row">
+    <% @units.each do |unit| %>
+      <div class="column">
+        <div class="card" >
+          <%= link_to shop_unit_path(unit.shop, unit), class: "text-decoration-none" do %>
             <!-- Just making sure I see the units. It can be removed later-->
             <% if unit.photo.attached? %>
-                <%= cl_image_tag(unit.photo.key, class: "card-img") %>
-              <% end %>
-              <div class="card-text-content">
-                <h6><%= unit.title %></h6>
-                <p><%= unit.description.truncate(50) %></p>
-                <p class = "mb-3">$<%= unit.price %></p>
-              <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now", data: { turbo_frame: "remote_modal" } %>
-
-              </div>
-            <%end%>
-          </div>
+              <%= cl_image_tag(unit.photo.key, class: "card-img") %>
+            <% end %>
+            <div class="card-text-content">
+              <h6><%= unit.title %></h6>
+              <p><%= unit.description.truncate(50) %></p>
+              <p class="mb-3">$<%= unit.price %></p>
+              <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now" %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
