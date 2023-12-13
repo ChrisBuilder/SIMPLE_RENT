@@ -1,4 +1,7 @@
-<%= simple_form_for([@shop, @unit]) do |f| %>
+<div class = "container">
+  <h4 class = "text-center">Add a unit to your shop</h4>
+  <div class = "row">
+    <%= simple_form_for([@shop, @unit]) do |f| %>
   <% if @unit.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@unit.errors.count, "error") %> prevented this unit from being saved:</h2>
@@ -16,8 +19,11 @@
   <%= f.input :available, as: :boolean %>
   <%= f.input :photo, as: :file %>
   <div class="actions">
-    <%= f.submit %>
+    <%= link_to "<< Back", "/shops/#{@shop.id}", class: "btn-flat" %>
+    <%= f.submit class: "btn-flat" %>
   </div>
 <% end %>
+  </div>
+  <!--<%= link_to "Back to your shop: #{@shop.title}", "/shops/#{@shop.id}" %> -->
 
-<button><%= link_to "Back to your shop: #{@shop.title}", "/shops/#{@shop.id}" %></button>
+</div>
