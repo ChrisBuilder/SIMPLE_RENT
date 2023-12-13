@@ -11,6 +11,7 @@ Booking.destroy_all
 Unit.destroy_all
 Shop.destroy_all
 User.destroy_all
+Chatroom.destroy_all
 
 
 
@@ -122,25 +123,25 @@ unit4.save
 
 unit5 = Unit.create!(
   price: 100,
-  description: "The original Kayak of Matt Olympia",
+  description: "The original Kayak of Yoda Broda",
   available: true,
-  title: "Kayak 75Z",
+  title: "Kayak Yakyak",
   shop: shop2
 )
-file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/a_blue_kayak_on_a_kayak_stand__eq5yvp.jpg")
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1702391810/development/t0npj79cm5kc6yln46obuhg5038b.jpg")
 unit5.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
 unit5.save
 
 unit6 = Unit.create!(
   price: 100,
-  description: "The original Kayak of Matt Olympia",
+  description: "The original Kayak of Alaskan Champion",
   available: true,
   title: "Kayak 75Z",
   shop: shop2
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/a_blue_kayak_on_a_kayak_stand__4_am0lbj.jpg")
-unit4.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
-unit4.save
+unit6.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
+unit6.save
 
 
 unit7 = Unit.create!(
@@ -212,6 +213,55 @@ unit12.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
 unit12.save
 
 
+unit13 = Unit.create!(
+  price: 120,
+  description: "The most popular tent for visitors of the Valley Forge, this Tent serves the needs of both the experienced camper as well as the novice hiker",
+  available: true,
+  title: "Adventurer's Tent",
+  shop: shop4
+)
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1702391841/a_blue_tent_on_a_savanna_cinem_enjliu.jpg")
+unit13.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
+unit13.save
+
+
+unit14 = Unit.create!(
+  price: 150,
+  description: "The country bike is the only bike you need to go across country and road, hills and valleys, with it's robust bouncyness, you will always be comfortable and fast on this bike",
+  available: true,
+  title: "Country Bike",
+  shop: shop3
+)
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1702391840/a_bicycle_with_a_low_instep_ci_s5ossn.jpg")
+unit14.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
+unit14.save
+
+
+unit15 = Unit.create!(
+  price: 90,
+  description: "The kayak MADE for the Norwegian Fjords",
+  available: true,
+  title: "Kayak NorVege",
+  shop: shop2
+)
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1702391841/a_yellow_kayak_on_a_a_ridge_ci_rqwiow.jpg")
+unit15.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
+unit15.save
+
+
+unit16 = Unit.create!(
+  price: 100,
+  description: "This child-friendly surfboard is perfect for your young ones, or for the beginners among you",
+  title: "Surfboard Sunshine",
+  shop: shop1
+)
+file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1702392412/Yellow_Surfboard_on_a_tropical_v2vhx1.jpg")
+unit16.photo.attach(io: file, filename: "surfboard.png", content_type: "image/png")
+unit16.save
+
+
+
+
 booking1 = Booking.create!(
   user: eke,
   unit: unit12,
@@ -226,14 +276,14 @@ booking2 = Booking.create!(
   end_date: "13-12-2023"
 )
 
-booking2 = Booking.create!(
+booking3 = Booking.create!(
   user: mounzer,
   unit: unit2,
   start_date: "12-12-2023",
   end_date: "13-12-2023"
 )
 
-booking2 = Booking.create!(
+booking4 = Booking.create!(
   user: chris,
   unit: unit6,
   start_date: "12-12-2023",
@@ -242,32 +292,11 @@ booking2 = Booking.create!(
 
 
 
-test = User.create!(
-  email: "test@tester",
-  password: "test@tester",
-)
-
-
-shop = Shop.create!(
-  title: "Hobb's Shop",
-  description: "We are a beautiful shop",
-  user: test
-)
-
-unit = Unit.create!(
-  price: 400,
-  description: "Surfboard",
-  available: true,
-  shop: shop
-)
-
-
-
-booking = Booking.create!(
-  unit: unit,
-  user: test,
-  start_date: "12-12-2023",
-  end_date: "14-12-2023"
-)
-
 Chatroom.create!(id:1, name: "chat")
+
+
+Unit.all.each do |unit|
+  if ! unit.photo.attached?
+    unit.destroy
+  end
+end
