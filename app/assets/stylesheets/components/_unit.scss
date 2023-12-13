@@ -160,3 +160,28 @@ p {
 #back-image {
   margin-left: 10px;
 }
+
+.book-unit {
+  text-decoration: none;
+  color: black;
+  font-family: "Rammetto One";
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: none;
+  padding: 5px;
+  display:inline-block;
+  background-color: #F5C53D;
+  margin-top: 25px;
+}
+
+.book-unit:hover {
+  background-color: black;
+  border: none;
+  color: #F5C53D;
+  border-radius: 3px;
+}
+
+.btn-unit {
+  background: none;
+}
