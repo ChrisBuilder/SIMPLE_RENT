@@ -15,3 +15,45 @@
   text-align: center;
   margin-top: 5%;
 }
+
+.explore {
+  /* Variables */
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+}
+
+.books-now {
+  text-decoration: none;
+  color: black;
+  font-family: "Rammetto One";
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: none;
+  padding: 5px;
+  display:inline-block;
+  background-color: #F5C53D;
+  margin-top: 10px;
+}
+
+.books-now:hover {
+  background-color: black;
+  border: none;
+  color: #F5C53D;
+  border-radius: 3px;
+}
+
+.page-container h1{
+  font-family: "Rammetto One";
+  font-size: 60px;
+}
+
+.page-container h4{
+  color: white;
+}
