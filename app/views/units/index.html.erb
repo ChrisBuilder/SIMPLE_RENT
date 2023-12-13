@@ -13,6 +13,7 @@
     </div>
   </div>
 
+
   <div class="row">
     <% @units.each do |unit| %>
       <div class="column">
@@ -30,9 +31,8 @@
             </div>
           <% end %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
-  <%= link_to "View Your Dashboard", dashboard_path, class: "btn-flat btn-dashboard" %>
 </div>
