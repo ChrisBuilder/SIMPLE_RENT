@@ -1,7 +1,7 @@
 // Import and register all your controllers from the importmap under controllers/*
 
 import { application } from "controllers/application"
-import checkoutController from "controllers/checkout_controller.js"
+import checkoutController from "./checkout_controller.js"
 application.register('checkout', checkoutController)
 
 // Eager load all controllers defined in the import map under controllers/**/*_controller
