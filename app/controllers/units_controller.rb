@@ -20,7 +20,7 @@ class UnitsController < ApplicationController
     @unit.shop = @shop
     authorize @unit
     if @unit.save
-      redirect_to shop_units_path, notice: "Unit added successfully"
+      redirect_to shop_path(@unit.shop), notice: "Unit added successfully"
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class UnitsController < ApplicationController
   private
 
   def unit_params
-    params.require(:unit).permit(:price, :description)
+    params.require(:unit).permit(:title, :price, :description, :photo)
   end
 
   def set_shop
