@@ -7,9 +7,13 @@
   <% unless signed_in? %>
     <div class="intro">
       <p>WELCOME To SimpleRent</p>
-      <h4>The one-stop shop for rental.</h4>
+      <h4>Your one-stop shop for rentals.</h4>
       <%= link_to "Explore", units_path, class: "books-now"%>
 
+    </div>
+
+    <div class="input-container">
+      <input type="text" placeholder="Search">
     </div>
   <%end%>
 
@@ -17,18 +21,8 @@
     <div class="home_intro">
       <h4>Your one-stop shop for rentals.</h4>
       <%= link_to "Explore", units_path, class: "books-now"%>
-
     </div>
   <%end%>
-
-
- <% unless signed_in? %>
-    <div class="input-container">
-      <input type="text" placeholder="Search">
-    </div>
-  <%end%>
-
-
 
 
 
