@@ -11,7 +11,7 @@
       <h2 class="text-center"><%= @unit.title %></h2>
       <p>Description: <%= @unit.description %></p>
       <div class="row">
-          <button class="col-6"><%= link_to @shop.title, shop_path(@unit.shop) %></button>
+          <button class="col-6"><%= link_to @shop.title, shop_path(@unit.shop), class: "book-now" %></button>
           <button class="col-6"><%= link_to "Book now", new_shop_unit_booking_path(@unit.shop, @unit), class: "book-now", data: { turbo_frame: "remote_modal" } %></button>
       </div>
     </div>
@@ -33,4 +33,6 @@
   </div>
 </div>
 
-<%= link_to "Back to browse", "/units/" %>
+<%= link_to units_path, id:"back-image" do %>
+  <%= image_tag image_path("back.png") %>
+<% end %>
