@@ -92,6 +92,10 @@
   border-radius: 4px;
 }
 
+.card:hover {
+  box-shadow: 0 20px px 0 rgba(0, 0, 0, 0.2);
+}
+
 .card-img {
   border-radius: 4px;
 }
@@ -102,7 +106,7 @@
 
 h6{
   font-family: "Rammetto One";
-  font-size: 12px;
+  font-size: 20px;
   color: black
 }
 

@@ -24,9 +24,8 @@
             <% end %>
             <div class="card-text-content">
               <h6><%= unit.title %></h6>
-              <p><%= unit.description.truncate(50) %></p>
+              <p class="text-start fs-5"><%= unit.description.truncate(50) %></p>
               <p class="mb-3">$<%= unit.price %></p>
-              <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now" %>
             </div>
           <% end %>
         </div>
