@@ -1,8 +1,7 @@
 
 <div class="container">
   <div class="welcome-header">
-    <p class="welcome">Welcome <%= @user.first_name %>,</p><br>
-    <p class="card-text">have a quick look at your activities!</p>
+    <p class="welcome">Welcome <%= @user.first_name %></p><br>
   </div>
 
   <% if params['redirect_status'] == 'succeeded' %>
@@ -30,7 +29,11 @@
       <div class="card">
         <h3>Total Revenue</h3>
         <hr>
-        <p class="card-text">$1250</p>
+        <p class="card-text">$12550</p>
+        <hr>
+        <h3>Last 30 days<h3>
+        <hr>
+        <p class="card-text">$1200</p>
       </div>
     </div>
     <div class = "column">
@@ -57,7 +60,7 @@
   <div class="row-main">
     <div class="column-main">
       <div class="card-main">
-        <h3 class="text-center">Your upcoming rental</h3>
+        <h3 class="text-center">⭐Your upcoming rental⭐</h3>
         <hr>
 
         <% @bookings.each do |booking| %>
@@ -82,37 +85,40 @@
       </div>
     </div>
 
-    <div class="column-main">
-      <div class="card-main">
-        <h3 class="text-center">Past Bookings</h3>
-        <hr>
-        <% @bookings.each do |booking| %>
-          <% if booking.end_date.past? %>
-            <div>
-              <h3 class="d-inline">Rented:</h3><p class="card-text d-inline"><%= booking.unit.title %></p>
-            </div>
-            <div>
-              <h3 class="d-inline">Start:</h3><p class="card-text d-inline"><%= booking.start_date.strftime("%A, %B %e, %Y") %></p>
-            </div>
-            <div>
-              <h3 class="d-inline">End:</h3> <p class="card-text d-inline"><%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
-            </div>
-            <div>
-              <h3 class="d-inline">Amount spent:</h3> <p class="card-text d-inline">$<%= booking.unit.price %></p>
-            </div>
-            <hr>
-          <% end %>
+    <div class="column-maintwo">
+  <div class="card-main">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="collapse" data-target="#pastBookings" aria-expanded="false" aria-controls="pastBookings">
+      Show Past Bookings
+    </button>
+    <div class="collapse" id="pastBookings">
+      <hr>
+      <% @bookings.each do |booking| %>
+        <% if booking.end_date.past? %>
+          <div>
+            <h3 class="d-inline">Rented:</h3><p class="card-text d-inline"><%= booking.unit.title %></p>
+          </div>
+          <div>
+            <h3 class="d-inline">Start:</h3><p class="card-text d-inline"><%= booking.start_date.strftime("%A, %B %e, %Y") %></p>
+          </div>
+          <div>
+            <h3 class="d-inline">End:</h3> <p class="card-text d-inline"><%= booking.end_date.strftime("%A, %B %e, %Y") %></p>
+          </div>
+          <div>
+            <h3 class="d-inline">Amount spent:</h3> <p class="card-text d-inline">$<%= booking.unit.price %></p>
+          </div>
+          <hr>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
+</div>
 </div>
 
 
   <!-- Button trigger modal -->
   <div class="d-flex justify-content-center">
     <button type="button" class="shop-create-button" data-toggle="modal" data-target="#exampleModal">
-      Start your shop
+      💵Start your shop💵
     </button>
   </div>
 
