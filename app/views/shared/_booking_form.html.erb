@@ -65,12 +65,10 @@
               as: :string,
               input_html: { data: { controller: "datepicker" } } %>
 
-        <div class="actions">
-          <div class = "row">
-            <%= f.submit class: "book-now mb-3"%>
-            <%= link_to "Cancel", units_path, class: "book-now btn-cancel" %>
-          </div>
-        </div>
+
+          <%= link_to "Cancel", units_path, class: "cancel-btn" %>
+          <%= f.submit "Book",class: "book-now mb-3"%>
+
       <% end %>
     </div>
   </div>
