@@ -16,10 +16,10 @@
         <div class="col-12 col-md-5 m-2">
           <%= link_to shop_unit_path(unit.shop, unit), class: "text-decoration-none" do %>
             <div class="card text-start p-3">
-              <h3><%= unit.title %></h3>
-              <hr>
-              <small>Listed <%= time_ago_in_words(unit.created_at, include_seconds: false, locale: 'en', scope: 'datetime.distance_in_words') %> ago.</small>
-              <p><%= unit.description %></p>
+            <h3><%= unit.title %></h3>
+            <hr>
+            <small>Listed <%= time_ago_in_words(unit.created_at, include_seconds: false, locale: 'en', scope: 'datetime.distance_in_words') %> ago.</small>
+            <p><%= unit.description %></p>
             </div>
           <% end %>
         </div>
