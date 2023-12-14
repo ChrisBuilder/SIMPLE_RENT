@@ -1,3 +1,6 @@
+<%= link_to units_path, id:"back-img" do %>
+  <%= image_tag image_path("back.png") %>
+<% end %>
 <div class="container chatroom" data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>" data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
   <h1>#<%= @chatroom.name %></h1>

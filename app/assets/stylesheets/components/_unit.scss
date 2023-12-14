@@ -122,11 +122,29 @@ p {
   padding: 5px;
 }
 
+.btn-cancel {
+  color: red;
+  text-align: center;
+  border: 1px solid red;
+}
+
+.btn-cancel:hover {
+  color: white !important;
+  background-color: red !important;
+}
+
 .book-now:hover {
   background-color: black;
   border: none;
   color: #F5C53D;
   border-radius: 3px;
+}
+
+
+.col-item {
+  border: 1px solid #F5C53D;
+  padding: 10px;
+  margin: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -137,4 +155,38 @@ p {
   }
 
 
+}
+
+#back-image {
+  margin-left: 10px;
+}
+
+#back-img {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.book-unit {
+  text-decoration: none;
+  color: black;
+  font-family: "Rammetto One";
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: none;
+  padding: 5px;
+  display:inline-block;
+  background-color: #F5C53D;
+  margin-top: 25px;
+}
+
+.book-unit:hover {
+  background-color: black;
+  border: none;
+  color: #F5C53D;
+  border-radius: 3px;
+}
+
+.btn-unit {
+  background: none;
 }

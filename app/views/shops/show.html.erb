@@ -1,40 +1,38 @@
+<div class="container h-100">
+  <div class="row mb-3">
+    <h2><%= @shop.title %>,</h2>
+    <p><%= @shop.description %></p>
+    <p>Owned By: <%= @shop.user.first_name %> <%= @shop.user.last_name %></p>
+    <p>Number of shop units: <%= @shop.units.count %></p>
+    <p>Date Opened: <%= @shop.created_at.strftime("%A, %B %e, %Y") %></p>
+    <hr>
+  </div>
 
-<head>
-  <%= stylesheet_link_tag 'styles' %>
-  <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
-</head>
+  <div class="row justify-content-center p-4">
+    <h2 class="text-center m-2">Shop Units</h2>
 
-<div id="header">
-  <h1><%= @shop.title %></h1>
-</div>
-
-<div class="content-container has-bg-img">
-  <% if @shop.photo.attached? %>
-    <%= cl_image_tag(@shop.photo.key, class: "bg-img") %>
-  <% end %>
-  <div class="left-column">
-    <div class="description-container">
-      <h2><%= @shop.description %></h2>
-    </div>
-
-    <div class="welcome-container">
-      <% if current_user && current_user.id == @shop.user_id %>
-        <%= button_to "Add a new unit to your Shop", new_shop_unit_path(@shop), method: :get %>
+    <% if @shop.units.any? %>
+      <% @shop.units.each do |unit| %>
+        <div class="col-12 col-md-5 m-2">
+          <%= link_to shop_unit_path(unit.shop, unit), class: "text-decoration-none" do %>
+            <div class="card text-start p-3">
+              <h3><%= unit.title %></h3>
+              <hr>
+              <small>Listed <%= time_ago_in_words(unit.created_at, include_seconds: false, locale: 'en', scope: 'datetime.distance_in_words') %> ago.</small>
+              <p><%= unit.description %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <h3>This shop has no units yet!</h3>
+    <% end %>
+    <div class="col-12 col-md-5 m-2">
+      <%= link_to new_shop_unit_path(@shop, @unit) do %>
+        <div class = "card-add">
+          <i class="fa-solid fa-circle-plus fa-2xl"></i>
+        </div>
       <% end %>
     </div>
   </div>
-
-<div class="right-column">
-  <div class="units-container">
-    <% @units.each do |unit| %>
-      <div class="unit-card">
-        <%= link_to shop_unit_path(@shop, unit), class: "unit-circle" do %>
-          <div style="background-image: url('<%= cl_image_path(unit.photo.key) %>');" class="unit-circle">
-            <p class="unit-description"><%= unit.description %></p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
 </div>
