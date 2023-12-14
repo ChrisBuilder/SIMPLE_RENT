@@ -5,6 +5,7 @@ h3{
   font-family: "Rammetto One";
   font-size: small;
   padding: 5px;
+  font-size: 24px;
 }
 
 p {
@@ -18,8 +19,10 @@ h4 {
 
 .welcome{
   font-weight: 700;
-  color:#F5C53D;
+  color:black;
   font-family: "Rammetto One";
+  text-align: center;
+  font-size: 42px;
 }
 
 .column {
@@ -81,7 +84,7 @@ h4 {
 
 .column-main {
   float: left;
-  width: 50%;
+  width: 65%;
   padding: 0 10px;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -96,11 +99,12 @@ h4 {
   height: auto;
   overflow: none;
   border-radius: 4px;
+  font-size: 24px;
 }
 .card-text {
   color: #666362;
   font-family: "Rammetto One";
-  font-size: 10px;
+  font-size: 18px;
   font-weight: lighter;
 }
 
@@ -112,7 +116,9 @@ h4 {
   background-color: #F5C53D !important;
   color: black !important;
   font-family: "Rammetto One" !important;
-  font-size: 12px !important;
+  font-size: 36px !important;
+  border-color: black !important;
+
 }
 
 .shop-create-button:hover {
@@ -126,4 +132,28 @@ h4 {
     display: block;
     margin-bottom: 30px;
   }
+}
+
+.column-maintwo {
+  float: left;
+  width: 35%;
+  padding: 0 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.text-centertwo{
+  text-align: center;
+}
+.text-center{
+  color: #008200
+}
+
+.btn-primary{
+  font-family: "Rammetto One";
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  background-color: #F5C53D !important;
+  border-color: black;
+  color: black;
 }
