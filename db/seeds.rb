@@ -76,9 +76,9 @@ shop4 = Shop.create!(
 
 unit1 = Unit.create!(
   price: 100,
-  description: "The original Surfboard of Matt Olympia",
+  description: "This is a board for the trickster, if you want to test your ability as a flipping, flying, wave-jumping surfer, this is the board for you!",
   available: true,
-  title: "Surfboard 75Z",
+  title: "Maser Torq",
   shop: shop1
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701990157/development/j8yjn2ax81kcj32ekyv3qxo1q8su.jpg")
@@ -88,9 +88,9 @@ unit1.save
 
 unit2 = Unit.create!(
   price: 100,
-  description: "The original Surfboard of Bethany Hamilton",
+  description: "The original Surfboard of Bethany Hamilton, who lost her arm in a shark attack, but then went on to recover and not only compete again, but also win Hawaiian open 2011 and 2015",
   available: true,
-  title: "Surfboard Hamilton",
+  title: "Surfboard Bethany",
   shop: shop1
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701990155/development/fva0vngrhcv8l6zdyz94qr6bkqlr.jpg")
@@ -99,10 +99,10 @@ unit2.save
 
 
 unit3 = Unit.create!(
-  price: 100,
-  description: "The original Surfboard of Brody",
+  price: 180,
+  description: "Made for the roughest enviroments, quick turns, hard whiplashes and it still stays calmly under your feet. Only for experience surfers",
   available: true,
-  title: "Surfboard Brody",
+  title: "Wave Catcher",
   shop: shop1
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701990153/development/5e6df37fc4qhh5d6enhgux26gc5q.jpg")
@@ -111,10 +111,10 @@ unit3.save
 
 
 unit4 = Unit.create!(
-  price: 100,
-  description: "The original Kayak of Matt Olympia",
+  price: 110,
+  description: "Kayak 360 has it all. A small pocket for snacks, a bottle holder, a waterproof pocket for your phone... you name it, and it probably has it! It is like a floating luxury car.",
   available: true,
-  title: "Kayak 75Z",
+  title: "Kayak 360",
   shop: shop2
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/Kayak_on_a_gentle_river_casual_1_yqqrcc.jpg")
@@ -122,8 +122,8 @@ unit4.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
 unit4.save
 
 unit5 = Unit.create!(
-  price: 100,
-  description: "The original Kayak of Yoda Broda",
+  price: 75,
+  description: "This kayak is made for warmer climates, as it has good leg ventilation and space to move around in. We recommend you try this on the Indus river ",
   available: true,
   title: "Kayak Yakyak",
   shop: shop2
@@ -133,10 +133,10 @@ unit5.photo.attach(io: file, filename: "kayak.png", content_type: "image/png")
 unit5.save
 
 unit6 = Unit.create!(
-  price: 100,
-  description: "The original Kayak of Alaskan Champion",
+  price: 300,
+  description: "The original Kayak of Atongmet, the champion of the Alaskan Olympic games in 1992. Atongmet is from the Nunavut-region of northern Canada and still uses this one from time to time",
   available: true,
-  title: "Kayak 75Z",
+  title: "Kayak Uno",
   shop: shop2
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/a_blue_kayak_on_a_kayak_stand__4_am0lbj.jpg")
@@ -145,10 +145,10 @@ unit6.save
 
 
 unit7 = Unit.create!(
-  price: 100,
-  description: "The original Bike of Matt Olympia",
+  price: 95,
+  description: "The friendliest bike you will ever sit on, this bike is so comfortable it feels like a sofa more than a saddle.",
   available: true,
-  title: "Bike 75Z",
+  title: "Friendly Bike",
   shop: shop3
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/Bicycle_on_a_street_casual_pho_2_v7l6zw.jpg")
@@ -157,10 +157,10 @@ unit7.save
 
 
 unit8 = Unit.create!(
-  price: 100,
-  description: "The original Bike of brodius Olympia",
+  price: 150,
+  description: "The bike for the athlete who wants to challenge the spped limits of most places, behold the Brodius ",
   available: true,
-  title: "Bike brodius",
+  title: "Brodius",
   shop: shop3
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/Bicycle_on_a_street_casual_pho_1_zgynpl.jpg")
@@ -168,10 +168,10 @@ unit8.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
 unit8.save
 
 unit9 = Unit.create!(
-  price: 100,
-  description: "The original Bike of Elena Olympia",
+  price: 70,
+  description: "The urban classic bicycle that delivers you steadily from point A to B in any city, ",
   available: true,
-  title: "Bike Elena",
+  title: "Citybike",
   shop: shop3
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964665/Bicycle_on_a_street_casual_pho_vz7k4c.jpg")
@@ -180,10 +180,10 @@ unit9.save
 
 
 unit10 = Unit.create!(
-  price: 100,
-  description: "The original Tent of Matt Olympia",
+  price: 50,
+  description: "This tent's biggest strength is how fast it is to set up. This might be why it is so popular among Olympic long distance hikers and navigators",
   available: true,
-  title: "Tent 75Z",
+  title: "Tent Olympic",
   shop: shop4
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701964664/red_Tent_on_green_grass_casual_ip6ouo.jpg")
@@ -191,8 +191,8 @@ unit10.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
 unit10.save
 
 unit11 = Unit.create!(
-  price: 100,
-  description: "The original Tent of Elena Olympia",
+  price: 200,
+  description: "Made for camping on windy steppes, this tent features three layers of insulation, so you can sleep like a log in the strongest winds, without feeling even the slightest breeze",
   available: true,
   title: "Tent Elena",
   shop: shop4
@@ -202,8 +202,8 @@ unit11.photo.attach(io: file, filename: "Bike.png", content_type: "image/png")
 unit11.save
 
 unit12 = Unit.create!(
-  price: 100,
-  description: "The original Tent of Bear Grylls",
+  price: 125,
+  description: "When Bear Grylls needs a tent, THIS is the one he chooses. The tent features a double layering, protective net for bugs, and strong zippers to open and close. In the summers you can even open up the pre-tent and use that as a barbecue section",
   available: true,
   title: "Tent Bear Grylls",
   shop: shop4
@@ -239,7 +239,7 @@ unit14.save
 
 unit15 = Unit.create!(
   price: 90,
-  description: "The kayak MADE for the Norwegian Fjords",
+  description: "The kayak MADE for the Norwegian Fjords. You will feel safe in the most tempest fjords and rivers in this kayak, because it becomes part of the river itself!",
   available: true,
   title: "Kayak NorVege",
   shop: shop2
@@ -250,7 +250,7 @@ unit15.save
 
 
 unit16 = Unit.create!(
-  price: 100,
+  price: 80,
   description: "This child-friendly surfboard is perfect for your young ones, or for the beginners among you",
   title: "Surfboard Sunshine",
   shop: shop1
