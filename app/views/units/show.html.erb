@@ -8,11 +8,11 @@
   <div class="unit-cardtwo col-6">
     <div class="unit-details">
       <%= cl_image_tag(@unit.photo.key, class: "card-img") %>
-      <h2 class="text-center"><%= @unit.title %></h2>
+      <h2 class="text-center m-4"><%= @unit.title %></h2>
       <p>Description: <%= @unit.description %></p>
-      <div class="row">
-          <button class="col-6 btn-unit"><%= link_to @shop.title, shop_path(@unit.shop), class: "book-unit" %></button>
-          <button class="col-6 btn-unit"><%= link_to "Book now", new_shop_unit_booking_path(@unit.shop, @unit), class: "book-unit", data: { turbo_frame: "remote_modal" } %></button>
+      <div class="row justify-content-between">
+          <%= link_to @shop.title, shop_path(@unit.shop), class: "col-4 book-unit m-3 text-center" %>
+          <%= link_to "Book now", new_shop_unit_booking_path(@unit.shop, @unit), class: "col-4 book-unit m-3 text-center" %>
       </div>
     </div>
   </div>
@@ -21,14 +21,19 @@
     <h2 class="text-center"> Check Availability </h2>
     <div>
       <%= month_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
-      <%= date %>
-      <% bookings.each do |booking| %>
-      <div class="bookingcard">
+        <p><%= date %></p>
+        <%# bookings.each do |booking| %>
+          <%# <div class="bookingcard">
+          <p>Booked</p>
+          </div> %>
+        <%# end %>
+        <%if bookings.any?%>
+          <div class="bookingcard">
+            <p class="text-center booked">Booked</p>
+          </div>
+        <%end%>
 
-        <p>Booked by: <%= booking.user.first_name %></p>
-      </div>
       <% end %>
-    <% end %>
     </div>
   </div>
 </div>

@@ -84,7 +84,24 @@
   }
 
   .bookingcard{
-    background-color: red;
+   background-color: rgb(189, 75, 75);
+  }
+
+  .booked{
+    color:black;
+  }
+
+  a{
+    font-weight: lighter;
+    text-decoration: none;
+    font-size: 10px;
+    color:#F5C53D;
+  }
+
+  .calendar-title {
+    margin-right: 125px;
+    margin-left: 125px;
+    text-align:center
   }
 
   .unit-circle {
@@ -97,7 +114,7 @@
     justify-content: center;
     position: relative;
   }
-  
+
   .unit-description {
     text-align: center;
     position: absolute;
@@ -121,4 +138,3 @@
     background-color: #F5C53D;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
