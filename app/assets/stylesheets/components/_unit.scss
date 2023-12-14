@@ -118,21 +118,26 @@ p {
 .book-now {
   text-decoration: none;
   color: black;
-  font-family: "Rammetto One";
-  font-size: 10px;
+  width: 70px;
   border: 1px solid black;
   border-radius: 3px;
   background: none;
-  padding: 5px;
+  padding: 2px;
 }
 
-.btn-cancel {
+.cancel-btn {
   color: red;
   text-align: center;
   border: 1px solid red;
+  width: 70px;
+  font-size: 20px;
+  border-radius: 3px;
+  background: none;
+  padding: 5px;
+  text-decoration: none;
 }
 
-.btn-cancel:hover {
+.cancel-btn:hover {
   color: white !important;
   background-color: red !important;
 }

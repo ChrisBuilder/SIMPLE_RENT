@@ -1,4 +1,4 @@
-<%= simple_form_for([@shop, @unit, @booking]) do |f| %>
+<!--<%= simple_form_for([@shop, @unit, @booking]) do |f| %>
   <div class="container">
     <div class="row">
       <h3 class="text-center">Select your desired booking dates</h3>
@@ -39,4 +39,26 @@
       </div>
     </div>
   </div>
-<% end %>
+<% end %> -->
+
+<div class="container">
+  <div class="row justify-content-center">
+    <h2 class="text-center p-3">Select your desired booking dates</h2>
+    <div class="col-12 col-md-5 offset-1 book-form-container m-1 p-3 calendar-img-container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= asset_path("calendar.jpeg") %>?crop=fill')">
+    </div>
+    <div class="col-12 col-md-6 book-form-container m-1 p-5">
+      <%= simple_form_for([@shop, @unit, @booking]) do |f| %>
+        <%= f.input :start_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+
+        <%= f.input :end_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+
+        <%= link_to "Cancel", units_path, class: "cancel-btn" %>
+        <%= f.submit "Book", class: "book-now mb-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>
