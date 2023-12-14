@@ -27,10 +27,11 @@
               <%= cl_image_tag(unit.photo.key, class: "card-img") %>
             <% end %>
             <div class="card-text-content">
-              <h6><%= unit.title %></h6>
-              <p><%= unit.description.truncate(50) %></p>
-              <p class = "mb-3">$<%= unit.price %></p>
-            <%= link_to "Book now", new_shop_unit_booking_path(unit.shop, unit), class: "book-now", data: { turbo_frame: "remote_modal" } %>
+              <h4><%= unit.title %></h4>
+              <p id="pcard"><%= unit.description.truncate(50) %></p>
+           <%= link_to new_shop_unit_booking_path(unit.shop, unit), class: "book-now", data: { turbo_frame: "remote_modal" } do %>
+  <span class="price-text"><%= "$#{unit.price}" %></span>
+<% end %>
 
             </div>
           <%end%>
