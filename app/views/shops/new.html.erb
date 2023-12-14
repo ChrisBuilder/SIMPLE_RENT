@@ -1,5 +1,14 @@
-<%= simple_form_for(@shop, html: { class: 'mt-4' }) do |f| %>
-  <%= f.input :title, label: 'Title' %>
-  <%= f.input :description, label: 'Description' %>
-  <%= f.submit 'Submit', class: 'btn btn-primary mt-3' %>
-<% end %>
+<div class="container">
+  <h4 class = text-center>Add a new shop</h4>
+  <div class="row">
+    <%= simple_form_for(@shop, html: { class: 'mt-4' }) do |f| %>
+      <%= f.input :title, label: 'Title' %>
+      <%= f.input :description, label: 'Description' %>
+      <div class="actions">
+        <%= link_to "<< Back", "/shops/#{@shop.id}", class: "btn-flat" %>
+        <%= f.submit 'Submit', class: 'btn-flat' %>
+
+      </div>
+    <% end %>
+  </div>
+</div>
