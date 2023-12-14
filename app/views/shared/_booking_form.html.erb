@@ -43,7 +43,8 @@
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-5 offset-1 book-form-container m-1">
+    <h2 class="text-center p-3">Select your desired booking dates</h2>
+    <div class="col-12 col-md-5 offset-1 book-form-container m-1 p-3">
       <h3>Image will be here</h3>
       <h3>Image will be here</h3>
       <h3>Image will be here</h3>
@@ -54,8 +55,23 @@
       <h3>Image will be here</h3>
       <h3>Image will be here</h3>
     </div>
-    <div class="col-12 col-md-6 book-form-container m-1">
-      <h3>Form will be here</h3>
+    <div class="col-12 col-md-6 book-form-container m-1 p-5 ">
+      <%= simple_form_for([@shop, @unit, @booking]) do |f| %>
+        <%= f.input :start_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+
+        <%= f.input :end_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+
+        <div class="actions">
+          <div class = "row">
+            <%= f.submit class: "book-now mb-3"%>
+            <%= link_to "Cancel", units_path, class: "book-now btn-cancel" %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
