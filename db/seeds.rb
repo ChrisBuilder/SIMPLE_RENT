@@ -10,8 +10,10 @@
 Booking.destroy_all
 Unit.destroy_all
 Shop.destroy_all
-User.destroy_all
+Message.destroy_all
 Chatroom.destroy_all
+User.destroy_all
+
 
 
 
