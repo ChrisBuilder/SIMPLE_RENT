@@ -19,6 +19,12 @@
               <h3><%= unit.title %></h3>
               <hr>
               <small>Listed <%= time_ago_in_words(unit.created_at, include_seconds: false, locale: 'en', scope: 'datetime.distance_in_words') %> ago.</small>
+              <div class="card" >
+                <!-- Just making sure I see the units. It can be removed later-->
+                <% if unit.photo.attached? %>
+                  <%= cl_image_tag(unit.photo.key, class: "card-img") %>
+                <% end %>
+              </div>
               <p><%= unit.description %></p>
             </div>
           <% end %>
