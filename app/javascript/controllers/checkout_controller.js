@@ -50,7 +50,7 @@ export default class extends Controller {
 
         confirmParams: {
 
-          return_url: "http://localhost:3000/dashboard"
+          return_url: "https://simplerent.store/dashboard"
 
         },
 
