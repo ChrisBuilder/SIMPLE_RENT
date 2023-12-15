@@ -80,7 +80,7 @@ unit1 = Unit.create!(
   price: 100,
   description: "This is a board for the trickster, if you want to test your ability as a flipping, flying, wave-jumping surfer, this is the board for you!",
   available: true,
-  title: "Maser Torq",
+  title: "SurfMaster Torque",
   shop: shop1
 )
 file = URI.open("https://res.cloudinary.com/dev4ls0vk/image/upload/v1701990157/development/j8yjn2ax81kcj32ekyv3qxo1q8su.jpg")
